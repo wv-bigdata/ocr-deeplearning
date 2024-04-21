@@ -1,6 +1,6 @@
 import streamlit as st
 import pytesseract
-from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image, ImageEnhance, ImageFilter, ImageOps
 
 def invert_colors(image):
     return ImageOps.invert(image)

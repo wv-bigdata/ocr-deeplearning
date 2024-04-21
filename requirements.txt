@@ -2,3 +2,4 @@ streamlit
 tesseract
 pytesseract
 Pillow
+tesseract-ocr-spa

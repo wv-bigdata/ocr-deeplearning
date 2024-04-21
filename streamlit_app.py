@@ -2,8 +2,6 @@ import streamlit as st
 import pytesseract
 from PIL import Image, ImageEnhance, ImageFilter
 
-pytesseract.pytesseract.tesseract_cmd = None
-
 def ocr_app():
     st.title("Aplicación de OCR con Streamlit")
 

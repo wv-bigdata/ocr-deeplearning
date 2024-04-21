@@ -44,3 +44,9 @@
 ## Notebooks
 
 [Tesseract - OCR](https://colab.research.google.com/drive/1eB53FOy6ust3Bn8jX4AOsYaqwY7lNEzF?usp=sharing)
+
+---
+
+## Aplicación web con el modelo preentrenado Tesseract.
+
+Luego de desarrollar en el entorno de Google Colab el proceso de OCR con el modelo preentrenado Tesseract, he creado una aplicación web para utilizarla en un entorno amigable. Para poder acceder a ella, haz click [aquí.](https://ocr-deeplearning-wv-bigdata.streamlit.app/)

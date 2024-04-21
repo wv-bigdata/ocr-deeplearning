@@ -2,11 +2,15 @@ import streamlit as st
 import pytesseract
 from PIL import Image, ImageEnhance, ImageFilter
 
+def invert_colors(image):
+    return ImageOps.invert(image)
+
 def ocr_app():
     st.title("Aplicación de OCR con Tesseract")
 
     st.sidebar.title("Configuración")
     threshold = st.sidebar.slider("Umbral de binarización", min_value=0, max_value=255, value=150)
+    invert_colors_option = st.sidebar.checkbox("Invertir colores", False)
 
     uploaded_image = st.file_uploader("Sube una imagen", type=["jpg", "jpeg", "png", "gif"])
 
@@ -18,6 +22,10 @@ def ocr_app():
     if st.button("Extraer texto") and uploaded_image is not None:
         # Cargar la imagen
         img = Image.open(uploaded_image)
+
+        # Invertir colores si la opción está seleccionada
+        if invert_colors_option:
+            img = invert_colors(img)
 
         # Convertir a escala de grises y mejorar el contraste
         img_gray = ImageEnhance.Contrast(img.convert('L')).enhance(2.0)
